@@ -1,0 +1,27 @@
+version: "3"
+services:
+  reverseproxy:
+    build:
+      context: ./udagram-reverseproxy
+    image: 35552425/reverseproxy
+    ports:
+      - "8100:8100"
+  backend-user:
+    build:
+      context: ./udagram-api-user
+    ports:
+      - "8080:8080"
+    image: 35552425/udagram-api-user
+    container_name: backend-user
+  backend-feed:
+    build:
+      context: ./udagram-api-feed
+    image: 35552425/udagram-api-feed
+    ports:
+      - "8081:8081"
+    container_name: backend-feed
+  frontend:
+    build:
+      context: ./udagram-frontend
+    image: 35552425/udagram-frontend:local
+    container_name: frontend

@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 
 dotenv.config({ path: "./src/.env" });
-console.log(process.env);
+// console.log(process.env);
 
 export const config = {
 	username: process.env.POSTGRES_USERNAME,
