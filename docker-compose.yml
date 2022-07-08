@@ -25,3 +25,5 @@ services:
       context: ./udagram-frontend
     image: 35552425/udagram-frontend:local
     container_name: frontend
+    ports:
+      - "8100:80"
